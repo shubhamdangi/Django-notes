@@ -3,9 +3,9 @@
 
 {% block content %}
 
-    <title>home</title>
+    <title>User</title>
 
-    <h1>base template check..?</h1>
+    <h1>Posts by {{ view.kwargs.username }} ({{ page_obj.paginator.count }})</h1>
     {% for post in posts %}
     <article class="media content-section">
       <img src="{{ post.author.profile.image.url }}" class="rounded-circle article-img" alt="profile pic">

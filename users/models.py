@@ -10,7 +10,7 @@ class Profile(models.Model):
     def __str__(self):
         return f'{self.user.username} Profile'
 
-#  code to compress the profile image size begin
+#  code to compress the profile image size Begin
     def save(self, *args, **kwargs):
         super().save(*args, **kwargs) #remember this 1.list , 2.dict
         img = Image.open(self.image.path)
@@ -19,4 +19,5 @@ class Profile(models.Model):
             output_size = (300,300)
             img.thumbnail(output_size)
             img.save(self.image.path)
-#  code to compress the profile image end
+#  code to compress the profile image End
+
